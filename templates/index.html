@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <!-- <link rel="stylesheet" href="main.css"> -->
+</head>
+
+<body>
+
+<div class="container">
+  <div class="jumbotron" style="height:160px; padding-top: 1px; margin: 0 0 0 0;" >
+    <h1 style="text-align: center">Mission to Mars</h1>
+      <p style="text-align: center"><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+  </div>
+</div>
+
+<!-- {% for update in mars%}  -->
+
+<div class="container">
+  <div class="card-body">
+    <h3 class="card-title" style="font-weight: bold;">Latest Mars News</h3>
+      <h4 class="card-subtitle" style="font-weight: bold;">{{ update.news_title }}</h4>
+      <p class="card-text">{{ update.news_p }}</p>
+      <b/>
+    </div>
+    
+    <div class="col-lg-8 col-md-8 col-xs-8">
+    <h3 class="card-title" style="font-weight: bold;">Featured Mars Image</h3>
+    <img width=100%; src="{{update.featured_image_url}}">
+    <b/>
+    </div>
+    
+    <div class="col-lg-4 col-md-4 col-xs-4 sidebar" style="outline: 1px solid lightgrey; margin: 0 0 0 0;">
+      <h5 class="card-subtitle" style="font-weight: bold;">Current Weather on Mars</h5>
+      <p class="card-text" style="font-size: 9pt; font-weight: lighter;">{{ update.mars_weather }}</p>
+    </div>
+    <br/>
+    <br/>
+    
+    <div class="col-lg-4 col-md-4 col-xs-4 sidebar">
+    <h5 class="card-subtitle" style="font-weight: bold;">Mars Facts</h5>
+      <table style="margin-top: 0px; font-size: 8pt;" cellpadding="10" border="1">
+        <thead>
+          <tr style="text-align: left;">
+             <th style="background-color: darkslategrey; color: white;">Description</th>
+             <th style="background-color: darkslategrey; color: white;">Value</th>
+          </tr>
+        </thead>
+        
+        <tbody style="padding: 5px;">
+          <tr>
+            <td style="font-weight: bolder">Equatorial Diameter:</td>
+            <td>6,792 km</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bolder">Polar Diameter:</td>
+            <td>6,752 km</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bolder">Mass:</td>
+            <td>6.42 x 10^23 kg (10.7% Earth)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bolder">Moons:</td>
+            <td>2 (Phobos &amp; Deimos)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bolder">Orbit Distance:</td>
+            <td>227,943,824 km (1.52 AU)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bolder">Orbit Period:</td>
+            <td>687 days (1.9 years)</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bolder">Surface Temperature:</td>
+            <td>-153 to 20 C</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bolder">First Record:</td>
+            <td>2nd millennium BC</td>
+          </tr>
+          <tr>
+            <td style="font-weight: bolder">Recorded By:</td>
+            <td>Egyptian astronomers</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
+<br/>
+<div class="container">
+<h3 class="card-title" style="width: 100%; font-weight: bold; text-align: center;">Mars Hemispheres</h3>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-xs-6">
+      <div style="outline: 1px solid lightgrey; padding-bottom: 3px;">
+      <img class="image-thumbnail" style='margin: 0px 10px 0px 0px' width=100%; src="{{update.hemisphere_image_urls.0.img_url}}">
+      <h4 style="text-align: center; font-weight: bold;">{{ update.hemisphere_image_urls.0.title }}</h4>
+      </div>
+      <br/>
+      <div style="outline: 1px solid lightgrey; padding-bottom: 3px;">
+      <img class="image-thumbnail" style='margin: 0px 10px 0px 0px' width=100%; src="{{update.hemisphere_image_urls.1.img_url}}">
+      <h4 style="text-align: center; font-weight: bold;">{{ update.hemisphere_image_urls.1.title }}</h4>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-xs-6">
+      <div style="outline: 1px solid lightgrey; padding-bottom: 3px;">
+      <img class="image-thumbnail" style='margin: 0px 10px 0px 0px' width=100%; src="{{update.hemisphere_image_urls.2.img_url}}">
+      <h4 style="text-align: center; font-weight: bold;">{{ update.hemisphere_image_urls.2.title }}</h4>
+      </div>
+      <br/>
+      <div style="outline: 1px solid lightgrey; padding-bottom: 3px;">
+      <img class="image-thumbnail" style='margin: 0px 10px 0px 0px' width=100%; src="{{update.hemisphere_image_urls.3.img_url}}">
+      <h4 style="text-align: center; font-weight: bold;">{{ update.hemisphere_image_urls.3.title }}</h4>
+      </div>
+    </div>
+</div>
+</div>
+                      
+<!-- {% endfor %}  -->
+
+</body>
+</html>
