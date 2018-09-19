@@ -42,21 +42,18 @@ def scrape_sites():
 
     # Identify the latest Mars Weather Tweet
     mars_weather = mars_twitter_soup.find('p', class_="TweetTextSize").text
-    
-    #.split(",")
-    
+   
     # Identify facts table from Mars Facts url
     mars_facts_url = 'https://space-facts.com/mars/'
     tables = pd.read_html(mars_facts_url)
     
     # Convert to DataFrame
     mars_df = tables[0]
-    mars_df.columns = ['Fact', 'Value']
+    mars_df.columns = ['Description', 'Value']
     mars_df
 
     # Convert mars_df to html table and save to mars_table.html file
-    mars_html_table = mars_df.to_html()
-    mars_df.to_html('mars_table.html')
+    mars_html_table = mars_df.to_html(index=False, classes='table-condensed')
 
     # Identify hemisphere_image_urls
     hemisphere_image_urls = [
