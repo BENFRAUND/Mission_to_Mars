@@ -7,6 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <style>
+  #mars_table thead {
+    font-weight: bold;
+    background-color: darkslategray;
+    color: white;
+  }
+
+  #mars_table td:first-child {
+    font-weight: bold;
+  }
+  </style>
 </head>
 
 <body>
@@ -23,8 +34,8 @@
     <h3 class="card-title" style="font-weight: bold;">Latest Mars News</h3>
       <h4 class="card-subtitle" style="font-weight: bold;">{{ mars_dict.news_title }}</h4>
       <p class="card-text">{{ mars_dict.news_p }}</p>
-      <b/>
   
+  <br/>
   </div>
   
     <div class="col-lg-8 col-md-8 col-xs-8">
@@ -32,8 +43,10 @@
     <img width=100%; src="{{ mars_dict.featured_image_url }}">
     <br/>
     </div>
-    
-    <div class="col-lg-4 col-md-4 col-xs-4 sidebar" style="outline: 1px solid lightgrey; margin: 0 0 0 0;">
+    <br/>
+    <br/>
+    <br/>
+    <div class="col-lg-3 col-md-3 col-xs-3 sidebar" style="outline: 1px solid lightgrey; margin: 0 0 0 13px;">
       <h5 class="card-subtitle" style="font-weight: bold;">Current Weather on Mars</h5>
       <p class="card-text" style="font-size: 9pt; font-weight: lighter;">{{ mars_dict.mars_weather }}</p>
     </div>
@@ -42,7 +55,7 @@
    
     <div class="col-lg-4 col-md-4 col-xs-4 sidebar">
     <h5 class="card-subtitle" style="font-weight: bold;">Mars Facts</h5>
-    <div style="margin-top: 0px; font-size: 8pt;" cellpadding="1" border="1">
+    <div style="margin-top: 0px; font-size: 8pt">
     {{ mars_dict.mars_facts|safe }}
     </div>
     </div>

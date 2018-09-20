@@ -53,7 +53,7 @@ def scrape_sites():
     mars_df
 
     # Convert mars_df to html table and save to mars_table.html file
-    mars_html_table = mars_df.to_html(index=False, classes='table-condensed')
+    mars_html_table = mars_df.to_html(index=False, classes='table-condensed table-striped', table_id="mars_table")
 
     # Identify hemisphere_image_urls
     hemisphere_image_urls = [
